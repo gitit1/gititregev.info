@@ -20,15 +20,15 @@ function SwiperSlider() {
         scrollbar={{ draggable: true }}
         className="mySwiper"
       >
-        {/* <SwiperSlide><Home /></SwiperSlide>
+        <SwiperSlide><Home /></SwiperSlide>
         <SwiperSlide><About /></SwiperSlide>
         <SwiperSlide><Resume /></SwiperSlide>
         <SwiperSlide><Projects /></SwiperSlide>
-        <SwiperSlide><Contact /></SwiperSlide> */}
-        <SwiperSlide>1</SwiperSlide>
+        <SwiperSlide><Contact /></SwiperSlide>
+        {/* <SwiperSlide>1</SwiperSlide>
         <SwiperSlide>2</SwiperSlide>
         <SwiperSlide>3</SwiperSlide>
-        <SwiperSlide>4</SwiperSlide>
+        <SwiperSlide>4</SwiperSlide> */}
       </Swiper>
     );
 };
