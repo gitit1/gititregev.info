@@ -1,5 +1,10 @@
 import React  from 'react';
+import '../styles/scss/about.scss';
 
 export function About() {
-    return <h1>About Page</h1>
+    return (
+        <div className='page'>
+            <h1>About Page</h1>
+        </div>
+    )
 }

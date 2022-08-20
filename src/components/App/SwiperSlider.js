@@ -1,36 +1,34 @@
-import React  from 'react';
+import React from 'react';
+import { useNavigate, useLocation  } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from "swiper";
+import { Pagination, Navigation, Mousewheel } from "swiper";
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/modules/pagination/pagination.min.css'
-
-import { Home } from '../../pages/Home'
-import { About } from '../../pages/About'
-import { Resume } from '../../pages/Resume'
-import { Projects } from '../../pages/Projects'
-import { Contact } from '../../pages/Contact'
+import { Pages } from '../../globals.tsx';
 
 function SwiperSlider() {
-    return (
-      <Swiper
-        mousewheel={true}
-        direction="vertical"
-        modules={[Pagination]}
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        className="mySwiper"
-      >
-        <SwiperSlide><Home /></SwiperSlide>
-        <SwiperSlide><About /></SwiperSlide>
-        <SwiperSlide><Resume /></SwiperSlide>
-        <SwiperSlide><Projects /></SwiperSlide>
-        <SwiperSlide><Contact /></SwiperSlide>
-        {/* <SwiperSlide>1</SwiperSlide>
-        <SwiperSlide>2</SwiperSlide>
-        <SwiperSlide>3</SwiperSlide>
-        <SwiperSlide>4</SwiperSlide> */}
-      </Swiper>
-    );
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  return (
+    <Swiper
+      pagination={{ clickable: true }}
+      direction="vertical"
+      mousewheel = {true}
+      modules={[Pagination, Navigation, Mousewheel]}
+      parallax={true}
+      // scrollbar={{ draggable: true }}
+      initialSlide={Object.values(Pages).indexOf(location.pathname.replace('/',''))}
+      onSlideChange={(slide) => navigate(`/${Pages[slide.activeIndex]}`)}
+      speed={1000}
+    >
+      <SwiperSlide className={Pages[0]}></SwiperSlide>        
+      <SwiperSlide className={Pages[1]}></SwiperSlide>        
+      <SwiperSlide className={Pages[2]}></SwiperSlide>        
+      <SwiperSlide className={Pages[3]}></SwiperSlide>
+      <SwiperSlide className={Pages[4]}></SwiperSlide>
+    </Swiper>
+  );
 };
 
 export default SwiperSlider;

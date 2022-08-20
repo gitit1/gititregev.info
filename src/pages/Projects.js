@@ -1,5 +1,10 @@
 import React  from 'react';
+import '../styles/scss/projects.scss';
 
 export function Projects() {
-    return <h1>Projects Page</h1>
+    return (
+        <div className='page'>
+            <h1>Projects Page</h1>
+        </div>
+    )
 }
