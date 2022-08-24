@@ -4,7 +4,9 @@ import '../styles/scss/resume.scss';
 export function Resume() {
     return (
         <div className='page'>
-            <h1>Resume Page</h1>
+            <div className='content'>
+                <h1>Resume Page</h1>
+            </div>  
         </div>
     )
 }

@@ -1,5 +1,58 @@
-.home{
-    background: url("../assets/home/background.png") no-repeat 
-    center center fixed;
+.home {
+    background: url("../assets/home/background.png") no-repeat center center fixed;
     background-size: cover;
+    .content {
+        // width: 90%;
+        height: 100%;
+        // margin-top: 20%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+
+        .details,
+        .image {
+            display: flex;
+        }
+
+        .details {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 60%;
+        }
+        .details{
+            h1{
+                color: #F0D6B1;
+                font-weight: 900;
+                font-size: 72px;
+                margin: 10px;
+            }
+            h2{
+                margin-top: 0px;
+                color: #a9bdb2;
+                font-weight: 700;
+                font-size: 36px;
+            }
+            p{
+                font-size: 24px;
+                font-optical-sizing: auto;
+                font-family: "Titillium Web rev=1";
+                font-weight: 600;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: initial;               
+            }
+        }
+        .image {
+            justify-content: flex-start;
+            width: 40%;
+
+            img {
+                width: 350px;
+                height: 350px;
+            }
+        }
+    }
 }

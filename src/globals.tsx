@@ -1,7 +1,7 @@
 export enum Pages {
-    'home',
-    'about',
-    'resume',
-    'projects',
-    'contact'
+    Home = 'home',
+    About = 'about',
+    Resume = 'resume',
+    Projects = 'projects',
+    Contact = 'contact'
 }
