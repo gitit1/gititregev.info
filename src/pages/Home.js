@@ -1,6 +1,6 @@
 import React  from 'react';
 import '../styles/scss/home.scss';
-import gititImg from '../styles/assets/gitit.jpg';
+import gititImg from '../styles/assets/home/gitit.jpg';
 
 export function Home() {
     return (

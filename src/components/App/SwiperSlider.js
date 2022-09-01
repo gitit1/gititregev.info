@@ -17,10 +17,10 @@ function SwiperSlider() {
 
   const Pages = {
     Home: 'home',
-    About: 'about',
     Resume: 'resume',
     Projects: 'projects',
     Contact: 'contact'
+    // About: 'about',
   }
 
   return (
@@ -37,9 +37,9 @@ function SwiperSlider() {
     >
       {
         <>
-          <SwiperSlide className='home'><Home /></SwiperSlide>
-          <SwiperSlide className='about'><About /></SwiperSlide>
-          <SwiperSlide><Resume /></SwiperSlide>
+          <SwiperSlide className={Pages.Home}><Home /></SwiperSlide>
+          {/* <SwiperSlide className='about'><About /></SwiperSlide> */}
+          <SwiperSlide className={Pages.Resume}><Resume /></SwiperSlide>
           <SwiperSlide><Projects /></SwiperSlide>
           <SwiperSlide><Contact /></SwiperSlide>
         </>
