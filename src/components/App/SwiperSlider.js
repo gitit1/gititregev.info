@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Mousewheel } from "swiper";
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/modules/pagination/pagination.min.css'
-// import { Pages } from '../../globals.tsx';
+
 import { Home } from '../../pages/Home';
-import { About } from '../../pages/About';
+// import { About } from '../../pages/About';
 import { Resume } from '../../pages/Resume';
 import { Projects } from '../../pages/Projects';
-import { Contact } from '../../pages/Contact';
+// import { Contact } from '../../pages/Contact';
+
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/modules/pagination/pagination.min.css'
 
 function SwiperSlider() {
   const navigate = useNavigate();
   const location = useLocation();
+  const sliderRef = useRef();
+  const activeSlide = useRef();
 
   const Pages = {
     Home: 'home',
@@ -23,8 +26,20 @@ function SwiperSlider() {
     // About: 'about',
   }
 
+  useEffect(() => {
+    const newIndex = Object.values(Pages).indexOf(location.pathname.replace('/', ''));
+    console.log('newIndex', newIndex)
+    if(newIndex === -1){
+      navigate(`/home`)
+      // sliderRef.current.swiper.slideTo(0);
+
+    }
+    sliderRef.current.swiper.slideTo(newIndex);
+  }, [location.pathname]);
+
   return (
     <Swiper
+      ref={sliderRef}
       pagination={{ clickable: true }}
       direction="vertical"
       mousewheel={true}
@@ -37,11 +52,15 @@ function SwiperSlider() {
     >
       {
         <>
-          <SwiperSlide className={Pages.Home}><Home /></SwiperSlide>
+          <SwiperSlide className={Pages.Home}>
+            <Home />
+          </SwiperSlide>
+          <SwiperSlide className={Pages.Resume}>
+            <Resume isActive={activeSlide.current === Pages.Resume} />
+          </SwiperSlide>
+          <SwiperSlide className={Pages.Projects}><Projects /></SwiperSlide>
           {/* <SwiperSlide className='about'><About /></SwiperSlide> */}
-          <SwiperSlide className={Pages.Resume}><Resume /></SwiperSlide>
-          <SwiperSlide><Projects /></SwiperSlide>
-          <SwiperSlide><Contact /></SwiperSlide>
+          {/* <SwiperSlide><Contact /></SwiperSlide> */}
         </>
       }
     </Swiper>

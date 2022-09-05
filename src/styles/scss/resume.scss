@@ -1,3 +1,5 @@
+@import "./vars.scss";
+
 .resume {
     background: url("../assets/resume/background.png") no-repeat center center fixed;
     background-size: cover;
@@ -9,10 +11,9 @@
         align-items: center;
 
         h1 {
-            align-self: flex-start;
-            font-weight: 900;
+            @include header-h1;
             font-size: 42px;
-            color: #a37e16;
+            margin-top: -8px;
         }
 
         .details {
@@ -24,7 +25,7 @@
                 padding: 24px;
                 box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
                 border-radius: 20px;
-                background: #fff;
+                background: #f7f4ea;
 
                 &.browzwear {
                     align-self: flex-start;

@@ -1,16 +1,10 @@
 import React from 'react'
-import {
-    Checkbox,
-    Grid,
-    Header,
-    Icon,
-    Image,
-    Menu,
-    Segment,
-    Sidebar,
-} from 'semantic-ui-react'
+import { useNavigate } from "react-router-dom";
+import { Menu, Sidebar,} from 'semantic-ui-react'
 
-const SidebarWrapper = ({isOpen, setIsOpen}) => {
+const SidebarWrapper = ({ isOpen, setIsOpen }) => {
+    const navigate = useNavigate();
+
     return (
         <Sidebar
             as={Menu}
@@ -23,18 +17,9 @@ const SidebarWrapper = ({isOpen, setIsOpen}) => {
             width='thin'
             direction='right'
         >
-            <Menu.Item as='a'>
-                <Icon name='home' />
-                Home
-            </Menu.Item>
-            <Menu.Item as='a'>
-                <Icon name='gamepad' />
-                Games
-            </Menu.Item>
-            <Menu.Item as='a'>
-                <Icon name='camera' />
-                Channels
-            </Menu.Item>
+            <Menu.Item onClick={() => navigate(`/home`)}>Home</Menu.Item>
+            <Menu.Item onClick={() => navigate(`/resume`)}>Resume</Menu.Item>
+            <Menu.Item onClick={() => navigate(`/projects`)}>Projects</Menu.Item>
         </Sidebar>
     )
 }

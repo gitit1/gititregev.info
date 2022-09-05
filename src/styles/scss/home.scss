@@ -1,7 +1,10 @@
+@import "./vars.scss";
+
 .home {
     background: url("../assets/home/background.png") no-repeat center center fixed;
     background-size: cover;
     .content {
+        width: 95%;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -22,14 +25,13 @@
         }
         .details{
             h1{
-                color: #F0D6B1;
-                font-weight: 900;
+                @include header-h1;
                 font-size: 72px;
                 margin: 10px;
             }
             h2{
                 margin-top: 0px;
-                color: #a9bdb2;
+                color: $sub-header-color;
                 font-weight: 700;
                 font-size: 36px;
             }
@@ -38,13 +40,11 @@
                 font-optical-sizing: auto;
                 font-family: "Titillium Web rev=1";
                 font-weight: 600;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: initial;               
+                margin: 0;              
             }
         }
         .image {
-            justify-content: flex-start;
+            justify-content: center;
             width: 40%;
 
             img {

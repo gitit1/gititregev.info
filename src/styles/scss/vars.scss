@@ -1,0 +1,9 @@
+$header-color: #f0d6b1;
+$sub-header-color: #a9bdb2;
+$header-shaddow: #fcedc0;
+
+@mixin header-h1 {
+    color: $header-color;
+    font-weight: 900;                
+    text-shadow: 4px 4px $header-shaddow;
+}

@@ -1,3 +1,106 @@
-.projects{
-    background-color: rgb(69, 50, 177);
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+@import "./vars.scss";
+
+.projects {
+    background: url("../assets/projects/background.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    .content {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 102px;
+
+        h1 {
+            @include header-h1;
+            font-size: 42px;
+        }
+
+        h4,
+        a {
+            color: $header-color;
+            font-weight: bold;
+        }
+
+        .projects-swiper {
+            margin-top: 24px;
+            width: 98%;
+
+            .title {
+                text-align: center;
+                * {
+                    height: 36px;
+                }
+                a {
+                    text-decoration: none;
+                    color: $sub-header-color;
+                }
+                div {
+                    margin-top: 8px;
+                    font-size: 36px;
+                }
+                img {
+                    height: 36px;
+                }
+            }
+            .tags {
+                display: flex;
+                flex-direction: row;
+                margin: 8px 0 24px;
+
+                div:not(:first-child) {
+                    margin-left: 32px;
+                }
+            }
+            .details {
+                display: flex;
+                flex-direction: row;
+                .description {
+                    width: 70%;
+                    // height: 80%;
+                    .desc-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+                        .desc-paras{
+                            height: 65%;
+                        }
+                    }
+                }
+                .lists {
+                    width: 30%;
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            .other {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                div:not(:first-child) {
+                    margin-left: 16px;
+                }
+            }
+            .image-gallery-content {
+                margin-top: 5%;
+                width: 100%;
+                .image-gallery-slide-wrapper {
+                    height: 200px;
+                }
+                &:not(.fullscreen) {
+                    .image-gallery-slide img {
+                        width: 100%;
+                        height: 150px;
+                    }
+                }
+                &.fullscreen {
+                    .image-gallery-slide img {
+                        width: 100%;
+                        height: 100vh;
+                    }
+                }
+            }
+        }
+    }
 }

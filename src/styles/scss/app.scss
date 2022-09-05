@@ -1,15 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,400;0,700;0,900;1,200;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,400;0,700;0,900;1,200;1,600&display=swap");
+@import "./vars.scss";
 
 body {
   height: 0 !important;
-  h1, h2, h3, p {
-    font-family: 'Titillium Web', sans-serif;
+  h1,
+  h2,
+  h3,
+  p {
+    font-family: "Titillium Web", sans-serif !important;
+  }
+  h1 {
+    @include header-h1;
+    font-size: 42px;
   }
 }
 .wrapper {
-  // position: relative;
   .header {
-    // position: relative;
     z-index: 100;
     width: 100%;
     display: flex;
@@ -19,6 +25,7 @@ body {
     .icons,
     .menu {
       margin: 32px;
+      margin-top: 24px;
     }
 
     .icons a,
@@ -26,6 +33,12 @@ body {
       color: #c7c6c2;
     }
 
+    .logo{
+      font-weight: 900;
+      font-size: 36px;
+      color: #c7c6c2;
+      cursor: pointer;
+    }
     .icons {
       display: flex;
       flex-direction: row;
@@ -67,6 +80,7 @@ body {
   width: 100vw;
   height: 100vh;
 
+  --swiper-theme-color: #f0d6b1;
   .swiper-slide {
     height: 100vh !important;
   }
