@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Header, Label } from 'semantic-ui-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import ImageGallery from 'react-image-gallery';
 import { Navigation, Pagination, FreeMode, Thumbs } from "swiper";
 
 import projects from '../components/Projects/projects.json';
