@@ -5,6 +5,7 @@
         "link": "http://www.myfanficslibrary.com",
 		"gitLink": "https://github.com/gitit1/my-fanfic-library",
 		"images": 16,
+		"imagesName": "mfl",
         "imagesType": "JPG",
 		"description": [
             "This is My biggest personal projects. I'm a huge reader of fanfics and the current sites are lacking.",
@@ -17,14 +18,14 @@
             "Scraping and Merging massive amount of data",
             "Users System",
             "DB - filter/sort/CRUD",
-            "Manager area buikd with socket to control the downloader in server",
+            "Manager area build with socket to control the downloader in server",
             "Authentication System",
             "Email System",
             "And Much More..."
 		],
 		"technologies": [
 			"Client - React",
-			"Server - Node J",
+			"Server - Node JS",
 			"DB: MongoDB"
 		],
         "tags": [
@@ -38,6 +39,7 @@
         "useLogoAsName": true,
         "link": "http://tripick.gititregev.info",
 		"images": 8,
+		"imagesName": "tripick",
         "imagesType": "png",
 		"description": [
 			"This site was my final project for my information system degree. the site won as one of the best 10 projects",
@@ -69,5 +71,32 @@
 			["http://tripick.gititregev.info/files/TripickFinal.pptx", "Project Power Point"],
 			["http://tripick.gititregev.info/files/top10.mp4", "Top 10 video (explain about the system)"]
 		]
+	},
+	{
+		"name": "Chat Room",
+        "useLogoAsName": false,
+        "link": "http://git_chat_room.gititregev.info/",
+		"gitLink": "https://github.com/gitit1/gits_chat_room",
+		"imagesName": "chat_room",
+		"images": 6,
+        "imagesType": "JPG",
+		"description": [
+            "Build a React based chat app. The app should contain two pages - a registration page and a chat page.",
+            "Full description for the rules of the application is on the gitHub readme file"
+        ],
+		"features": [
+            "Ability to Send & Recieve Messages Between Users",
+            "Authentication System"
+		],
+		"technologies": [
+			"React",
+			"Node JS",
+			"Web Socket"
+		],
+        "tags": [
+            ["Small Project","purple"],
+            ["React","pink"],
+            ["NodeJS","blue"]
+        ]
 	}
 ]

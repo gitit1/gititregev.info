@@ -4,7 +4,7 @@
     background: url("../assets/home/background.png") no-repeat center center fixed;
     background-size: cover;
     .content {
-        width: 95%;
+        width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -17,26 +17,28 @@
         }
 
         .details {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+            // text-align: center;
             width: 60%;
         }
         .details{
             h1{
+                display: block;
                 @include header-h1;
-                font-size: 72px;
-                margin: 10px;
+                font-size: 4em;
+                // margin: 10px;
             }
             h2{
+                display: block;
                 margin-top: 0px;
                 color: $sub-header-color;
                 font-weight: 700;
-                font-size: 36px;
+                font-size: 2em;
             }
             p{
-                font-size: 24px;
+                font-size: 1.5em;
                 font-optical-sizing: auto;
                 font-family: "Titillium Web rev=1";
                 font-weight: 600;
@@ -50,6 +52,29 @@
             img {
                 width: 350px;
                 height: 350px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: $max-width-of-window) {
+    .home .content{
+        flex-direction: column;
+        .image {
+            margin-top: 32px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .home .content{
+        flex-direction: column;
+        .image {
+            margin-top: 32px;
+            img{
+                width: 150px;
+                height: 150px;
             }
         }
     }

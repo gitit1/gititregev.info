@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import { useLocation } from "react-router-dom";
-import { Container, Transition, Image } from 'semantic-ui-react';
+import { Container, Transition, Image, Header } from 'semantic-ui-react';
 
 import gititImg from '../styles/assets/home/gitit.jpg';
 import '../styles/scss/home.scss';
@@ -15,22 +16,22 @@ export function Home() {
     }, [location.pathname]);
 
     return (
-        <div className='page'>
+        <Container className='page'>
             <Container className='content'>
                 <Transition as={Container} animation={"fade right"} duration={1000} visible={visible}>
                     <Container className='details'>
-                        <h1>Gitit Regev</h1>
-                        <h2>Full Stack Developer</h2>
+                        <Header as='h1' textAlign='center'>Gitit Regev</Header>
+                        <Header as='h2' textAlign='center' >Full Stack Developer</Header>
                         <p>My Name is Gitit Regev, I am a full stack developer from Israel</p>
                         <p>Coding is not only a job for me, I love the challenge in planning the work flow , solving issues and watching things come to live</p>
                     </Container>
                 </Transition>
-                <Container className='image'>
+                <Container className='image hide-on-mobile'>
                     <Transition animation={"drop"} duration={2000} visible={visible}>
-                            <Image src={gititImg} />
+                        <Image src={gititImg} />
                     </Transition>
                 </Container>
             </Container>
-        </div>
+        </Container>
     )
 }

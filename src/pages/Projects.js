@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Header, Label } from 'semantic-ui-react';
+import { Container, Header, Icon, Label } from 'semantic-ui-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, FreeMode, Thumbs } from "swiper";
+import { Navigation, Pagination, Thumbs } from "swiper";
 
 import projects from '../components/Projects/projects.json';
 import 'swiper/swiper-bundle.min.css';
@@ -21,12 +21,16 @@ export function Projects() {
                     className="image-popup"
                     style={{ position: "absolute" }}
                     open
-                    onClick={() => setIsImageZoomed('')}
+                    // onClick={() => setIsImageZoomed('')}
                 >
+                    <Icon
+                        name="close"
+                        size='big'
+                        onClick={() => setIsImageZoomed('')}
+                    />
                     <img
                         className="image"
                         src={isImageZoomedOpen}
-                        onClick={() => setIsImageZoomed('')}
                     />
                 </dialog>
             )}
@@ -39,17 +43,17 @@ export function Projects() {
                 >
                     {
                         projects.map(project => {
-                            const { name, useLogoAsName, gitLink, tags, imagesType, link, description, features, technologies } = project;
+                            const { name, useLogoAsName, gitLink, tags, imagesName, imagesType, link, description, features, technologies } = project;
                             const images = [];
                             for (let index = 1; index <= project.images; index++) {
-                                images.push(require(`../styles/assets/projects/${name.toLocaleLowerCase()}/${index}.${imagesType}`))
+                                images.push(require(`../styles/assets/projects/${imagesName}/${index}.${imagesType}`))
                             }
                             return (
                                 <SwiperSlide key={name}>
                                     <Container className='title'>
                                         <a href={link} target='_blank' rel='noopener noreferrer'>
                                             {useLogoAsName ?
-                                                <img src={require(`../styles/assets/projects/${name.toLocaleLowerCase()}/logo.png`)} alt={name} /> :
+                                                <img src={require(`../styles/assets/projects/${imagesName}/logo.png`)} alt={name} /> :
                                                 <div>{name}</div>
                                             }
                                         </a>
@@ -112,7 +116,7 @@ export function Projects() {
                                     >
                                         {
                                             images.map((image, index) => {
-                                                return <SwiperSlide key={`image--${name}-${index}`}>
+                                                return <SwiperSlide key={`image--${imagesName}-${index}`}>
                                                     <img src={image} onClick={() => setIsImageZoomed(image)} />
                                                 </SwiperSlide>
                                             })

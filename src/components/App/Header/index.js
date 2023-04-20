@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import SidebarWrapper from './Sidebar';
+import { Container, Header } from 'semantic-ui-react';
 import { Icon } from 'semantic-ui-react';
 
-function Header() {
+function HeaderElement() {
     const navigate = useNavigate();
 
     const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
     return (
-        <div className='header'>
+        <Container className='header'>
             <div className='logo'>
-                <div onClick={() => navigate(`/home`)}>Gitit Regev</div>
+                <Header as="h1" onClick={() => navigate(`/home`)}>Gitit Regev</Header>
             </div>
             <div className='icons'>
                 <a className='email' href='mailto:gititregev1@gmail.com'>
@@ -25,11 +26,11 @@ function Header() {
                 </a>
             </div>
             <div className='menu'>
-                <Icon name='bars' size='big' onClick={() => setIsSideBarOpen(!isSideBarOpen)} />
+                <Icon name='bars' onClick={() => setIsSideBarOpen(!isSideBarOpen)} />
                 <SidebarWrapper isOpen={isSideBarOpen} setIsOpen={(toggle) => setIsSideBarOpen(toggle)} />
             </div>
-        </div>
+        </Container>
     )
 }
 
-export default Header;
+export default HeaderElement;

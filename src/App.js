@@ -3,13 +3,13 @@ import './styles/scss/app.scss';
 import 'semantic-ui-css/semantic.min.css'
 
 import SwiperSlider from './components/App/SwiperSlider.js';
-import Header from './components/App/Header';
+import HeaderElement from './components/App/Header';
 
 function App() {
 
   return (
     <div className='wrapper'>
-      <Header />
+      <HeaderElement />
       <div className='swiperWrapper'>
         <SwiperSlider />
       </div>
